@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { DatePickerWithRange } from "@/components/ui/date-range-picker";
 import {
   ResponsiveContainer,
   XAxis,
@@ -31,9 +32,14 @@ export function RevenueChart() {
       <CardHeader className="flex-row items-center justify-between pb-8">
         <div className="space-y-1">
           <CardTitle className="text-base font-medium">
-            Receita no período
+            Multas no período
           </CardTitle>
-          <CardDescription>Receita diária no período</CardDescription>
+          <CardDescription>Multas mensaís no período</CardDescription>
+        </div>
+
+        <div className="flex items-center justify-center gap-4">
+          <CardTitle className="text-base font-medium">Período</CardTitle>
+          <DatePickerWithRange />
         </div>
       </CardHeader>
       <CardContent>

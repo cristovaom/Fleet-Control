@@ -10,6 +10,8 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { DialogTrigger } from "@radix-ui/react-dialog";
+import { Dialog, DialogContent } from "../ui/dialog";
 
 export function ProfileHeader() {
   return (
@@ -25,11 +27,18 @@ export function ProfileHeader() {
           <DropdownMenuLabel>Minha conta</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <User className="mr-2 h-4 w-4" />
-              <span>Perfil</span>
-              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-            </DropdownMenuItem>
+            <Dialog>
+              <DialogTrigger asChild>
+                <DropdownMenuItem>
+                  <User className="mr-2 h-4 w-4" />
+                  <span>Perfil</span>
+                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                  {/* <DropdownMenuContent>asdf</DropdownMenuContent> */}
+                </DropdownMenuItem>
+              </DialogTrigger>
+
+              <DialogContent>asdf</DialogContent>
+            </Dialog>
 
             <DropdownMenuItem>
               <Settings className="mr-2 h-4 w-4" />

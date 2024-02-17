@@ -64,7 +64,7 @@ export function Drivers() {
                   <TableCell>João Silva Prado</TableCell>
                   <TableCell>59 Anos</TableCell>
                   <TableCell>29/01/1962</TableCell>
-                  <TableCell>105.242.419-88</TableCell>
+                  <TableCell>105.000.419-88</TableCell>
                   <TableCell>5</TableCell>
                 </TableRow>
               </TableBody>

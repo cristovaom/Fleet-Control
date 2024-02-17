@@ -10,6 +10,14 @@ export function AppLayout() {
         <div className="flex flex-1 flex-col gap-4 p-8 pt-6">
           <Outlet />
         </div>
+        <div>
+          <footer className="flex justify-center items-center h-16 b-t ">
+            <span>
+              © {new Date().getFullYear()} - Todos os direitos reservados -
+              @FleetControl
+            </span>
+          </footer>
+        </div>
       </div>
     </>
   );
