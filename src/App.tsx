@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import { router } from "./routes";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/react-query";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Helmet titleTemplate="%s | Fleet Control" />
         <Toaster richColors closeButton />
         <QueryClientProvider client={queryClient}>
+          <SpeedInsights />
           <RouterProvider router={router} />
         </QueryClientProvider>
       </ThemeProvider>
