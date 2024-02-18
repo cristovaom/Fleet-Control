@@ -1,3 +1,4 @@
+import { RegisterDriver } from "@/api/register-driver";
 import { Button } from "@/components/ui/button";
 import {
   DialogDescription,
@@ -14,11 +15,12 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 const DriverSchema = z.object({
-  nome: z.string().min(2, "Nome inválido!"),
+  name: z.string().min(2, "Nome inválido!"),
   email: z.string().email("Email inválido!"),
+  phone: z.string(),
   cpf: z.string().min(3, "CPF inválido!"),
   cnh: z.string().min(3, "CNH inválida!"),
-  nascimento: z.any(),
+  birthdate: z.any(),
 });
 
 type DriverSchemaBody = z.infer<typeof DriverSchema>;
@@ -32,9 +34,15 @@ export function DriverRegister() {
     resolver: zodResolver(DriverSchema),
   });
 
-  function handleRegisterDriver(data: DriverSchemaBody) {
-    console.log(data);
-    toast.success("Motorista cadastrado com sucesso!");
+  async function handleRegisterDriver(data: DriverSchemaBody) {
+    const response = await RegisterDriver({
+      ...data,
+      birthdate: new Date(data.birthdate),
+    });
+
+    if (response) {
+      toast.success("Motorista cadastrado com sucesso!");
+    }
   }
   return (
     <>
@@ -58,13 +66,13 @@ export function DriverRegister() {
               placeholder="Nome do motorista"
               className="h-8 w-[320px]"
               id="nome"
-              {...register("nome")}
+              {...register("name")}
             />
-            {errors.nome && (
+            {errors.name && (
               <div className="flex flex-initial justify-start">
                 {" "}
                 <span className="text-rose-500 text-sm flex flex-initial w-1">
-                  {errors.nome.message}
+                  {errors.name.message}
                 </span>
               </div>
             )}
@@ -130,12 +138,24 @@ export function DriverRegister() {
             )}
           </div>
 
+          <div className="flex items-center gap-4">
+            <Label htmlFor="phone" className="w-20">
+              Telefone*
+            </Label>
+            <Input
+              placeholder="Telefone"
+              className="h-8 w-[320px]"
+              id="phone"
+              {...register("phone")}
+            />
+          </div>
+
           <div className="flex items-center gap-6">
             <Label className="w-20">Nascimento*</Label>
             <Input
               className="h-8 w-[320px]"
               type="date"
-              {...register("nascimento")}
+              {...register("birthdate")}
             />
           </div>
 
