@@ -30,7 +30,7 @@ export function CategoryByTickets() {
           <CardTitle className="text-base font-medium">
             Categoria de Multas
           </CardTitle>
-          <CardDescription>Categoria total de multas</CardDescription>
+          <CardDescription>Categorias de multas</CardDescription>
         </div>
       </CardHeader>
       <CardContent>
