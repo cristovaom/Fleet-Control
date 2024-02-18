@@ -12,8 +12,24 @@ import {
 } from "../ui/dropdown-menu";
 import { DialogTrigger } from "@radix-ui/react-dialog";
 import { Dialog, DialogContent } from "../ui/dialog";
+import { toast } from "sonner";
+import { handleLogoutAPI } from "@/api/log-out";
+import { useNavigate } from "react-router-dom";
 
 export function ProfileHeader() {
+  const router = useNavigate();
+  async function handleLogout() {
+    const response = await handleLogoutAPI();
+
+    if (response) {
+      toast.success("Deslogado com sucesso!");
+      router("/sign-in");
+    }
+
+    if (!response) {
+      toast.error("Falha ao sair , tente novamente!");
+    }
+  }
   return (
     <div>
       <DropdownMenu>
@@ -55,7 +71,7 @@ export function ProfileHeader() {
           </DropdownMenuGroup>
 
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={handleLogout}>
             <LogOut className="mr-2 h-4 w-4" />
             <span>Log out</span>
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
