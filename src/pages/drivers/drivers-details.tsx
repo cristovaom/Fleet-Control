@@ -1,13 +1,6 @@
 import { DialogHeader } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import {
   DialogContent,
   DialogDescription,
@@ -26,7 +19,7 @@ export function DriversDetails() {
 
         <DialogDescription>
           <Table>
-            <TableHeader className="flex">
+            <TableHeader className="flex justify-between">
               <TableRow className="flex flex-col">
                 <TableHead>Identificador:</TableHead>
                 <TableHead>Nome:</TableHead>
@@ -34,6 +27,7 @@ export function DriversDetails() {
                 <TableHead>Data de Nascimento:</TableHead>
                 <TableHead>Número de Multas:</TableHead>
                 <TableHead>CPF:</TableHead>
+                <TableHead>CNH:</TableHead>
                 <TableHead>Data de Cadastro:</TableHead>
               </TableRow>
               <TableRow className="flex flex-col">
@@ -43,6 +37,7 @@ export function DriversDetails() {
                 <TableHead>12/12/1990</TableHead>
                 <TableHead>5</TableHead>
                 <TableHead>123.456.789-00</TableHead>
+                <TableHead>123.456.789-00-20</TableHead>
                 <TableHead>12/12/2020</TableHead>
               </TableRow>
             </TableHeader>

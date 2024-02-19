@@ -7,12 +7,12 @@ import {
   Table,
 } from "@/components/ui/table";
 
-import { FolderSearch2, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import { DriversDetails } from "../drivers/drivers-details";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { TripsFilter } from "./trips-filter";
+import { TripsDetails } from "./trips-details";
 
 export function Trips() {
   return (
@@ -36,7 +36,6 @@ export function Trips() {
                   <TableHead className="w-[140px]">Horario Partida</TableHead>
                   <TableHead className="w-[140px]">Horario Final</TableHead>
                   <TableHead className="w-[140px]">Nome da empresa</TableHead>
-                  <TableHead className="w-[64px]">Multas</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -54,7 +53,7 @@ export function Trips() {
                         </Button>
                       </DialogTrigger>
                       <DialogContent>
-                        <DriversDetails />
+                        <TripsDetails />
                       </DialogContent>
                     </Dialog>
                   </TableCell>
@@ -65,17 +64,6 @@ export function Trips() {
                   <TableCell>19/04/02-14:38</TableCell>
                   <TableCell>19/04/02-15:38</TableCell>
                   <TableCell>Uniamerica</TableCell>
-                  <TableCell>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button variant="outline">
-                          <FolderSearch2 className="h-3 w-3" />
-                          <span className="sr-only">Detalhes da corrida</span>
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent>Multou</DialogContent>
-                    </Dialog>
-                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
