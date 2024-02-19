@@ -1,6 +1,13 @@
 import { DialogHeader } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
-import { Table, TableHead, TableHeader } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import {
   DialogContent,
   DialogDescription,
@@ -11,19 +18,33 @@ export function DriversDetails() {
   return (
     <>
       <DialogContent>
-        <DialogHeader>
+        <DialogHeader className="flex items-center justify-center">
           <DialogTitle>Nome: João Prado silva</DialogTitle>
-          <DialogDescription>Detalhes do motorista</DialogDescription>
         </DialogHeader>
 
-        <Separator />
+        <Separator className="mt-6 mb-6" />
 
         <DialogDescription>
           <Table>
-            <TableHeader>
-              <TableHead>Nome:</TableHead>
-              <TableHead>Idade:</TableHead>
-              <TableHead>Data de nascimento:</TableHead>
+            <TableHeader className="flex">
+              <TableRow className="flex flex-col">
+                <TableHead>Identificador:</TableHead>
+                <TableHead>Nome:</TableHead>
+                <TableHead>Idade:</TableHead>
+                <TableHead>Data de Nascimento:</TableHead>
+                <TableHead>Número de Multas:</TableHead>
+                <TableHead>CPF:</TableHead>
+                <TableHead>Data de Cadastro:</TableHead>
+              </TableRow>
+              <TableRow className="flex flex-col">
+                <TableHead>adfakfasd34589154341234314</TableHead>
+                <TableHead>João Silva Antunes Prado</TableHead>
+                <TableHead>30</TableHead>
+                <TableHead>12/12/1990</TableHead>
+                <TableHead>5</TableHead>
+                <TableHead>123.456.789-00</TableHead>
+                <TableHead>12/12/2020</TableHead>
+              </TableRow>
             </TableHeader>
           </Table>
         </DialogDescription>

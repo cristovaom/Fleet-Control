@@ -14,7 +14,7 @@ export function AppLayout() {
           <footer className="flex justify-center items-center h-16 b-t ">
             <span>
               © {new Date().getFullYear()} - Todos os direitos reservados -
-              @FleetControl
+              @FleetControlSpeed
             </span>
           </footer>
         </div>
