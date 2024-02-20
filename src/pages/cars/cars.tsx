@@ -14,6 +14,7 @@ import { Archive, Search, SquarePen } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { CarsFilter } from "./cars-filter";
 import { CarsDetails } from "./cars-details";
+import { CarsDeleteConfirm } from "./cars-delete-confirm";
 
 export function Cars() {
   return (
@@ -70,10 +71,10 @@ export function Cars() {
                       <DialogTrigger asChild>
                         <Button variant="outline">
                           <SquarePen className="h-3 w-3" />
-                          <span className="sr-only">Detalhes do motorista</span>
+                          <span className="sr-only">Editar motorista</span>
                         </Button>
                       </DialogTrigger>
-                      <DialogContent>Editar</DialogContent>
+                      <DialogContent>editar</DialogContent>
                     </Dialog>
                   </TableCell>
                   <TableCell>
@@ -81,10 +82,12 @@ export function Cars() {
                       <DialogTrigger asChild>
                         <Button variant="outline">
                           <Archive className="h-3 w-3" />
-                          <span className="sr-only">Detalhes do motorista</span>
+                          <span className="sr-only">Excluir motorista</span>
                         </Button>
                       </DialogTrigger>
-                      <DialogContent>Excluir</DialogContent>
+                      <DialogContent>
+                        <CarsDeleteConfirm />
+                      </DialogContent>
                     </Dialog>
                   </TableCell>
                 </TableRow>
