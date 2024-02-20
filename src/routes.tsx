@@ -6,6 +6,7 @@ import { Dashboard } from "./pages/dashboard/dashboard";
 import { Drivers } from "./pages/drivers/drivers";
 import { Trips } from "./pages/trips/trips";
 import { Tickets } from "./pages/tickets/tickets";
+import { Cars } from "./pages/cars/cars";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
       { path: "/motoristas", element: <Drivers /> },
       { path: "/corridas", element: <Trips /> },
       { path: "/multas", element: <Tickets /> },
+      { path: "/carros", element: <Cars /> },
     ],
   },
   {

@@ -3,6 +3,7 @@ import { ThemeToggle } from "../theme/theme-toogle";
 import { ProfileHeader } from "./profile";
 import {
   Building2,
+  CarFront,
   Files,
   Home,
   Milestone,
@@ -28,6 +29,11 @@ export function Header() {
           <NavLink to="/motoristas">
             <PersonStandingIcon className="w-4 h-4" />
             Motoristas
+          </NavLink>
+
+          <NavLink to="/carros">
+            <CarFront className="w-4 h-4" />
+            Carros
           </NavLink>
 
           <NavLink to="/corridas">
