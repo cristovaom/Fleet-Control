@@ -13,6 +13,7 @@ import { DriversDetails } from "../drivers/drivers-details";
 import { Button } from "@/components/ui/button";
 import { Archive, Search, SquarePen } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { CarsFilter } from "./cars-filter";
 
 export function Cars() {
   return (
@@ -22,7 +23,7 @@ export function Cars() {
         <h1 className="text-3xl font-bold tracking-tight">Lista de veículos</h1>
 
         <div className="space-y-2.5">
-          {/* <DriversFilter /> */}
+          <CarsFilter />
 
           <div className="rounded-md border">
             <Table>
