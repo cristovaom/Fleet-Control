@@ -4,6 +4,7 @@ import { TotalTicketsAmount } from "./total-tickets-amount";
 import { TotalSpentAmount } from "./total-spent-amount";
 import { RevenueChart } from "./revenue-chart";
 import { CategoryByTickets } from "./category-tickets";
+import { TotalVehiclesActives } from "./total-vehicles-active";
 
 export function Dashboard() {
   return (
@@ -16,6 +17,7 @@ export function Dashboard() {
           <TotalDriversAmount />
           <TotalTicketsAmount />
           <TotalSpentAmount />
+          <TotalVehiclesActives />
         </div>
 
         <div className="grid grid-cols-9 gap-4">

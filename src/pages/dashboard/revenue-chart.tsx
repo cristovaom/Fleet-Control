@@ -58,7 +58,7 @@ export function RevenueChart() {
               type="linear"
               strokeWidth={2}
               dataKey="revenue"
-              stroke={colors["violet"]["400"]}
+              stroke={colors["violet"]["500"]}
             />
           </ComposedChart>
         </ResponsiveContainer>
