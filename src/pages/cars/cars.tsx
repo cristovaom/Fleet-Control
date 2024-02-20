@@ -9,11 +9,11 @@ import {
 
 import { Helmet } from "react-helmet-async";
 
-import { DriversDetails } from "../drivers/drivers-details";
 import { Button } from "@/components/ui/button";
 import { Archive, Search, SquarePen } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { CarsFilter } from "./cars-filter";
+import { CarsDetails } from "./cars-details";
 
 export function Cars() {
   return (
@@ -55,7 +55,7 @@ export function Cars() {
                         </Button>
                       </DialogTrigger>
                       <DialogContent>
-                        <DriversDetails />
+                        <CarsDetails />
                       </DialogContent>
                     </Dialog>
                   </TableCell>
