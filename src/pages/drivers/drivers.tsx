@@ -9,10 +9,12 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { Search } from "lucide-react";
+import { Archive, Search, SquarePen } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { DriversDetails } from "./drivers-details";
 import { DriversFilter } from "./drivers-filter";
+import { DeleteConfirmModal } from "@/components/delete-confirm-modal";
+import { DriversEdit } from "./drivers.-edit";
 
 export function Drivers() {
   return (
@@ -39,6 +41,8 @@ export function Drivers() {
                   </TableHead>
                   <TableHead>CPF</TableHead>
                   <TableHead className="w-[140px]">Total de Multas</TableHead>
+                  <TableHead className="w-[64px]"></TableHead>
+                  <TableHead className="w-[64px]"></TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -65,7 +69,36 @@ export function Drivers() {
                   <TableCell>59 Anos</TableCell>
                   <TableCell>29/01/1962</TableCell>
                   <TableCell>105.000.419-88</TableCell>
-                  <TableCell>5</TableCell>
+                  <TableCell className=" text-center">5</TableCell>
+                  <TableCell>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="outline">
+                          <SquarePen className="h-3 w-3" />
+                          <span className="sr-only">Editar motorista</span>
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <DriversEdit />
+                      </DialogContent>
+                    </Dialog>
+                  </TableCell>
+                  <TableCell>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="outline">
+                          <Archive className="h-3 w-3" />
+                          <span className="sr-only">Excluir motorista</span>
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <DeleteConfirmModal
+                          title="Excluir motorista"
+                          description="Tem certeza que deseja deletar este motorista? Esta ação não pode ser desfeita!"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>

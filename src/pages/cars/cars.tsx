@@ -14,7 +14,7 @@ import { Archive, Search, SquarePen } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { CarsFilter } from "./cars-filter";
 import { CarsDetails } from "./cars-details";
-import { CarsDeleteConfirm } from "./cars-delete-confirm";
+import { DeleteConfirmModal } from "../../components/delete-confirm-modal";
 
 export function Cars() {
   return (
@@ -86,7 +86,10 @@ export function Cars() {
                         </Button>
                       </DialogTrigger>
                       <DialogContent>
-                        <CarsDeleteConfirm />
+                        <DeleteConfirmModal
+                          title="Excluir veículo"
+                          description="Tem certeza que deseja deletar este veículo? Esta ação não pode ser desfeita!"
+                        />
                       </DialogContent>
                     </Dialog>
                   </TableCell>
