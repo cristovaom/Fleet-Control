@@ -152,7 +152,7 @@ export function DriversEdit() {
           </div>
 
           <Button variant="default" type="submit">
-            Cadastrar
+            Editar
           </Button>
         </form>
       </DialogDescription>

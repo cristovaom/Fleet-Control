@@ -15,6 +15,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { CarsFilter } from "./cars-filter";
 import { CarsDetails } from "./cars-details";
 import { DeleteConfirmModal } from "../../components/delete-confirm-modal";
+import { CarsEdit } from "./cars-edit";
 
 export function Cars() {
   return (
@@ -74,7 +75,9 @@ export function Cars() {
                           <span className="sr-only">Editar motorista</span>
                         </Button>
                       </DialogTrigger>
-                      <DialogContent>editar</DialogContent>
+                      <DialogContent>
+                        <CarsEdit />
+                      </DialogContent>
                     </Dialog>
                   </TableCell>
                   <TableCell>
