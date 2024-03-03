@@ -1,9 +1,10 @@
 import { Input } from "@/components/ui/input";
-import { Dialog, DialogTrigger, DialogContent } from "@radix-ui/react-dialog";
+
 import { Search, X } from "lucide-react";
 
-import { DriverRegister } from "../drivers/drivers-register";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { TripsRegister } from "./trips-register";
 
 export function TripsFilter() {
   return (
@@ -31,7 +32,7 @@ export function TripsFilter() {
         </DialogTrigger>
 
         <DialogContent>
-          <DriverRegister />
+          <TripsRegister />
         </DialogContent>
       </Dialog>
     </div>

@@ -27,6 +27,7 @@ export function CarsDetails() {
                 <TableHead>Ano:</TableHead>
                 <TableHead>Número de Multas:</TableHead>
                 <TableHead>Placa:</TableHead>
+                <TableHead>Nº do RENAVAM:</TableHead>
                 <TableHead>Nº do Chassí:</TableHead>
                 <TableHead>Data de Cadastro:</TableHead>
                 <TableHead>Data de edição:</TableHead>
@@ -40,6 +41,7 @@ export function CarsDetails() {
                 <TableHead>2018</TableHead>
                 <TableHead>5</TableHead>
                 <TableHead>BCTY-2843</TableHead>
+                <TableHead>5134812343214</TableHead>
                 <TableHead>5134-1234</TableHead>
                 <TableHead>21/02/2023</TableHead>
                 <TableHead>21/02/2024</TableHead>
