@@ -33,7 +33,7 @@ export function Header() {
 
           <NavLink to="/carros">
             <CarFront className="w-4 h-4" />
-            Carros
+            Veículos
           </NavLink>
 
           <NavLink to="/corridas">

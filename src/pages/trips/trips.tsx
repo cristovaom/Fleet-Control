@@ -7,12 +7,13 @@ import {
   Table,
 } from "@/components/ui/table";
 
-import { Search } from "lucide-react";
+import { Archive, Search, SquarePen } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { TripsFilter } from "./trips-filter";
 import { TripsDetails } from "./trips-details";
+import { DeleteConfirmModal } from "@/components/delete-confirm-modal";
 
 export function Trips() {
   return (
@@ -36,6 +37,8 @@ export function Trips() {
                   <TableHead className="w-[140px]">Horario Partida</TableHead>
                   <TableHead className="w-[140px]">Horario Final</TableHead>
                   <TableHead className="w-[140px]">Nome da empresa</TableHead>
+                  <TableHead className="w-[64px]"></TableHead>
+                  <TableHead className="w-[64px]"></TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -64,6 +67,35 @@ export function Trips() {
                   <TableCell>19/04/02-14:38</TableCell>
                   <TableCell>19/04/02-15:38</TableCell>
                   <TableCell>Uniamerica</TableCell>
+                  <TableCell>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="outline">
+                          <SquarePen className="h-3 w-3" />
+                          <span className="sr-only">Editar motorista</span>
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <p>editar</p>
+                      </DialogContent>
+                    </Dialog>
+                  </TableCell>
+                  <TableCell>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="outline">
+                          <Archive className="h-3 w-3" />
+                          <span className="sr-only">Excluir motorista</span>
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <DeleteConfirmModal
+                          title="Excluir corrida"
+                          description="Tem certeza que deseja deletar essa corrida? Esta ação não pode ser desfeita!"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>

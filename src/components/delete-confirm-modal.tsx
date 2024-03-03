@@ -8,16 +8,18 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-export function CarsDeleteConfirm() {
+interface CarsDeleteProps {
+  title: string;
+  description: string;
+}
+
+export function DeleteConfirmModal({ title, description }: CarsDeleteProps) {
   return (
     <>
       <Dialog>
         <DialogHeader>
-          <DialogTitle>Excluir Veículo</DialogTitle>
-          <DialogDescription>
-            Você tem certeza que deseja excluir este veículo? Esta ação não pode
-            ser desfeita.
-          </DialogDescription>
+          <DialogTitle>{title}</DialogTitle>
+          <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
 
         <DialogFooter>
