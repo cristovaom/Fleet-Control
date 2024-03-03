@@ -40,11 +40,7 @@ const ticketsSchema = z.object({
 type TicketsSchemaBody = z.infer<typeof ticketsSchema>;
 
 export function TicketsRegsiter() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<TicketsSchemaBody>({
+  const { register, handleSubmit } = useForm<TicketsSchemaBody>({
     resolver: zodResolver(ticketsSchema),
   });
 
