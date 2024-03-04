@@ -9,10 +9,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { ArrowRight, FolderSearch2, Search } from "lucide-react";
-import { DriversDetails } from "../drivers/drivers-details";
+import { ArrowRight, Search, Trash } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { TicketsDetails } from "./tickets-details";
+import { DeleteConfirmModal } from "@/components/delete-confirm-modal";
 
 export function Tickets() {
   return (
@@ -43,6 +44,7 @@ export function Tickets() {
                   <TableHead className="w-[64px]"></TableHead>
                 </TableRow>
               </TableHeader>
+
               <TableBody>
                 {/* {result &&
                   result.orders.map((order) => {
@@ -55,11 +57,11 @@ export function Tickets() {
                       <DialogTrigger asChild>
                         <Button variant="outline">
                           <Search className="h-3 w-3" />
-                          <span className="sr-only">Detalhes da corrida</span>
+                          <span className="sr-only">Detalhes da multa</span>
                         </Button>
                       </DialogTrigger>
                       <DialogContent>
-                        <DriversDetails />
+                        <TicketsDetails />
                       </DialogContent>
                     </Dialog>
                   </TableCell>
@@ -85,11 +87,16 @@ export function Tickets() {
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="outline">
-                          <FolderSearch2 className="h-3 w-3" />
+                          <Trash className="h-3 w-3" />
                           <span className="sr-only">Detalhes da corrida</span>
                         </Button>
                       </DialogTrigger>
-                      <DialogContent>Multou</DialogContent>
+                      <DialogContent>
+                        <DeleteConfirmModal
+                          title="Deseja excluir essa multa?"
+                          description="Você tem certeza que deseja excluir essa multa? Essa ação é irreversível depois."
+                        />
+                      </DialogContent>
                     </Dialog>
                   </TableCell>
                 </TableRow>
@@ -101,11 +108,11 @@ export function Tickets() {
                       <DialogTrigger asChild>
                         <Button variant="outline">
                           <Search className="h-3 w-3" />
-                          <span className="sr-only">Detalhes da corrida</span>
+                          <span className="sr-only">Excluir lixeira</span>
                         </Button>
                       </DialogTrigger>
                       <DialogContent>
-                        <DriversDetails />
+                        <TicketsDetails />
                       </DialogContent>
                     </Dialog>
                   </TableCell>
@@ -129,11 +136,16 @@ export function Tickets() {
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="outline">
-                          <FolderSearch2 className="h-3 w-3" />
-                          <span className="sr-only">Detalhes da corrida</span>
+                          <Trash className="h-3 w-3" />
+                          <span className="sr-only">Excluir lixeira</span>
                         </Button>
                       </DialogTrigger>
-                      <DialogContent>Multou</DialogContent>
+                      <DialogContent>
+                        <DeleteConfirmModal
+                          title="Deseja excluir essa multa?"
+                          description="Você tem certeza que deseja excluir essa multa? Essa ação é irreversível depois."
+                        />
+                      </DialogContent>
                     </Dialog>
                   </TableCell>
                   {/* Tabela 2 */}

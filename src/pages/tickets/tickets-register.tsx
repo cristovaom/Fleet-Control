@@ -62,7 +62,7 @@ export function TicketsRegsiter() {
               *Categoria
             </Label>
             <Select>
-              <SelectTrigger className="w-20">
+              <SelectTrigger className="flex-1">
                 <SelectValue placeholder="Categoria" />
               </SelectTrigger>
               <SelectContent {...register("categoria")} className="w-40">
@@ -81,14 +81,14 @@ export function TicketsRegsiter() {
           </div>
 
           <div className="flex items-center gap-6">
-            <Label htmlFor="categoria" className="w-20">
+            <Label htmlFor="categoria" className="w-21">
               *Anexo da Multa
             </Label>
             <Input type="file" />
           </div>
 
           <div className="flex items-center gap-6">
-            <Label htmlFor="categoria" className="w-20">
+            <Label htmlFor="categoria" className="w-28">
               *Corrida ID
             </Label>
             <Input />
@@ -99,7 +99,7 @@ export function TicketsRegsiter() {
               *Motorista
             </Label>
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="flex-1">
                 <SelectValue placeholder="motorista" />
               </SelectTrigger>
               <SelectContent>
@@ -118,7 +118,7 @@ export function TicketsRegsiter() {
               *Carro
             </Label>
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="flex-1">
                 <SelectValue placeholder="Carro" />
               </SelectTrigger>
               <SelectContent>

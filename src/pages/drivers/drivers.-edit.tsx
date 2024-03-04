@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 
 import { z } from "zod";
 const DriverSchema = z.object({
+  id: z.string().optional(),
   name: z.string().min(2, "Nome inválido!"),
   email: z.string().email("Email inválido!"),
   phone: z.string(),
@@ -48,6 +49,20 @@ export function DriversEdit() {
         asChild
       >
         <form onSubmit={handleSubmit(handleRegisterDriver)}>
+          <div className=" flex items-center gap-4 ">
+            <Label htmlFor="nome" className="w-20">
+              Id*
+            </Label>{" "}
+            {/* Definindo largura fixa para as labels */}
+            <Input
+              placeholder="adfakfasd34589154341234314"
+              disabled
+              value={"adfakfasd34589154341234314"}
+              className="h-8 w-[320px]"
+              id="id"
+              {...register("id")}
+            />
+          </div>
           <div className=" flex items-center gap-4 ">
             <Label htmlFor="nome" className="w-20">
               Nome*
