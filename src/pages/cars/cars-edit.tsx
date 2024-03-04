@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 const carSchema = z.object({
+  id: z.string().optional(),
   marca: z
     .string({
       required_error: "Marca é obrigatória!",
@@ -80,6 +81,16 @@ export function CarsEdit() {
         <DialogDescription>
           <form onSubmit={handleSubmit(handleSubmitForm)}>
             <section className="flex justify-center flex-col gap-5">
+              <div className="flex items-center gap-4">
+                <Label className="w-20">*Id</Label>
+                <Input
+                  value={"adfakfasd34589154341234314"}
+                  placeholder="adfakfasd34589154341234314"
+                  disabled
+                  {...register("id")}
+                />
+              </div>
+
               <div className="flex items-center gap-4">
                 <Label className="w-20">*Marca</Label>
                 <Input placeholder="Renault" {...register("marca")} />

@@ -21,7 +21,6 @@ export function Trips() {
       <Helmet title="Corridas" />
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-bold tracking-tight">Lista de corridas</h1>
-
         <div className="space-y-2.5">
           <TripsFilter />
 
@@ -42,10 +41,6 @@ export function Trips() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {/* {result &&
-                  result.orders.map((order) => {
-                    return <OrderTableRow key={order.orderId} order={order} />;
-                  })} */}
                 <TableRow>
                   <TableCell>
                     <Dialog>
