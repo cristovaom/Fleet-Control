@@ -12,13 +12,14 @@ import {
 import { Archive, Search, SquarePen } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { DriversDetails } from "./drivers-details";
-import { DriversFilter } from "./drivers-filter";
 import { DeleteConfirmModal } from "@/components/delete-confirm-modal";
 import { DriversEdit } from "./drivers.-edit";
 import { useEffect, useState } from "react";
 import { fetchDriversAPI } from "@/api/fetch-drivers";
 import { format, formatDistanceToNowStrict } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import { Pagination } from "@/components/pagination";
+import { DriverRegister } from "./drivers-register";
 
 interface DriverPropsAPI {
   id: string;
@@ -35,31 +36,44 @@ interface DriverPropsAPI {
 
 export function Drivers() {
   const [data, setData] = useState<DriverPropsAPI[]>([]);
+  const [atualizar, setAtualizar] = useState<boolean>(false);
 
   useEffect(() => {
     async function getDrivers() {
-      const data = await fetchDriversAPI({ page: 0 });
+      const data = await fetchDriversAPI();
       setData(data);
     }
     getDrivers();
-  }, []);
+  }, [atualizar]);
   return (
     <>
       <Helmet title="Motoristas" />
       <div className="flex flex-col gap-4">
-        <h1 className="text-3xl font-bold tracking-tight">
-          Lista de motoristas
-        </h1>
+        <div className="flex justify-between">
+          <h1 className="text-3xl font-bold tracking-tight">
+            Lista de motoristas
+          </h1>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="default">Adicionar motorista</Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DriverRegister
+                fn_atualizarPagina={() => {
+                  setAtualizar(!atualizar);
+                }}
+              />
+            </DialogContent>
+          </Dialog>
+        </div>
 
         <div className="space-y-2.5">
-          <DriversFilter />
-
           <div className="rounded-md border">
             <Table>
               <TableHeader>
                 <TableRow>
                   <TableHead className="w-[64px]"></TableHead>
-                  <TableHead className="w-[140px]">Identificador</TableHead>
+                  <TableHead className="w-[340px]">Identificador</TableHead>
                   <TableHead className="w-[180px]">Nome</TableHead>
                   <TableHead className="w-[140px]">Idade</TableHead>
                   <TableHead className="w-[164px]">
@@ -141,6 +155,9 @@ export function Drivers() {
                                 totalTickets={0}
                                 phone={driver.phone}
                                 email={driver.email!}
+                                fn_atualizarInfo={() => {
+                                  setAtualizar(!atualizar);
+                                }}
                               />
                             </DialogContent>
                           </Dialog>
@@ -172,14 +189,18 @@ export function Drivers() {
               </TableBody>
             </Table>
           </div>
-          {/* {result && (
-            <Pagination
-              onPageChange={handlePaginate}
-              pageIndex={result.meta.pageIndex}
-              totalCount={result.meta.totalCount}
-              perPage={result.meta.perPage}
-            />
-          )} */}
+
+          <Pagination
+            pageIndex={1}
+            totalCount={data.length}
+            perPage={5}
+            onPageChange={function (pageIndex: number): void | Promise<void> {
+              throw new Error("Function not implemented.");
+            }} // onPageChange={handlePaginate}
+            // pageIndex={result.meta.pageIndex}
+            // totalCount={result.meta.totalCount}
+            // perPage={result.meta.perPage}
+          />
         </div>
       </div>
     </>

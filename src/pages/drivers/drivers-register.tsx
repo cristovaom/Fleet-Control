@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { DialogClose } from "@radix-ui/react-dialog";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -25,7 +26,11 @@ const DriverSchema = z.object({
 
 type DriverSchemaBody = z.infer<typeof DriverSchema>;
 
-export function DriverRegister() {
+interface DriverRegisterProps {
+  fn_atualizarPagina: () => void;
+}
+
+export function DriverRegister({ fn_atualizarPagina }: DriverRegisterProps) {
   const {
     register,
     handleSubmit,
@@ -42,6 +47,7 @@ export function DriverRegister() {
 
     if (response) {
       toast.success("Motorista cadastrado com sucesso!");
+      fn_atualizarPagina();
     }
   }
   return (
@@ -160,7 +166,7 @@ export function DriverRegister() {
           </div>
 
           <Button variant="default" type="submit">
-            Cadastrar
+            <DialogClose> Cadastrar</DialogClose>
           </Button>
         </form>
       </DialogDescription>

@@ -11,19 +11,31 @@ import { Archive, Search, SquarePen } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { TripsFilter } from "./trips-filter";
+
 import { TripsDetails } from "./trips-details";
 import { DeleteConfirmModal } from "@/components/delete-confirm-modal";
+import { TripsRegister } from "./trips-register";
 
 export function Trips() {
   return (
     <>
       <Helmet title="Corridas" />
       <div className="flex flex-col gap-4">
-        <h1 className="text-3xl font-bold tracking-tight">Lista de corridas</h1>
-        <div className="space-y-2.5">
-          <TripsFilter />
+        <div className="flex justify-between">
+          <h1 className="text-3xl font-bold tracking-tight">
+            Lista de corridas
+          </h1>
 
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="default">Adicionar corrida</Button>
+            </DialogTrigger>
+            <DialogContent>
+              <TripsRegister />
+            </DialogContent>
+          </Dialog>
+        </div>
+        <div className="space-y-2.5">
           <div className="rounded-md border">
             <Table>
               <TableHeader>
