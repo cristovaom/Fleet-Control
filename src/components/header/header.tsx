@@ -26,16 +26,6 @@ export function Header() {
             Início
           </NavLink>
 
-          <NavLink to="/motoristas">
-            <PersonStandingIcon className="w-4 h-4" />
-            Motoristas
-          </NavLink>
-
-          <NavLink to="/carros">
-            <CarFront className="w-4 h-4" />
-            Veículos
-          </NavLink>
-
           <NavLink to="/corridas">
             <Milestone className="w-4 h-4" />
             Ultimas corridas
