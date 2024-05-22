@@ -9,11 +9,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { ArrowRight, Search, Trash } from "lucide-react";
+import { ArrowRight, Trash } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { TicketsDetails } from "./tickets-details";
-import { DeleteConfirmModal } from "@/components/delete-confirm-modal";
 import { TicketsRegsiter } from "./tickets-register";
 import { useEffect, useState } from "react";
 import { FetchMultas } from "@/api/fetch-multas";

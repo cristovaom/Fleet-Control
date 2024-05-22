@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { set } from "date-fns";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -41,8 +40,7 @@ export function TicketsRegsiter() {
   const {
     register,
     handleSubmit,
-    setValue,
-    watch,
+
     formState: { errors },
   } = useForm<TicketsSchemaBody>({
     resolver: zodResolver(ticketsSchema),

@@ -1,14 +1,7 @@
 import { ThemeToggle } from "../theme/theme-toogle";
 
 import { ProfileHeader } from "./profile";
-import {
-  Building2,
-  CarFront,
-  Files,
-  Home,
-  Milestone,
-  PersonStandingIcon,
-} from "lucide-react";
+import { Building2, Files, Home, Milestone } from "lucide-react";
 import { NavLink } from "../navlink";
 import { Separator } from "../ui/separator";
 
